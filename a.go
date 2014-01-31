@@ -246,9 +246,9 @@ handleServerreq
 
 func main(){
 
-s:=New(1,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/hello/d.json")
-s1:=New(2,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/hello/d.json")
-s2:=New(3,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/hello/d.json")
+s:=New(1,"d.json")
+s1:=New(2,"d.json")
+s2:=New(3,"d.json")
 s.Outbox() <-&Envelope{Pid:2 /*cluster.BROADCAST*/, Msg: "hello there"}
 s.Outbox() <-&Envelope{Pid:3 /*cluster.BROADCAST*/, Msg: "hello there1"}
 s.Outbox() <-&Envelope{Pid:2 /*cluster.BROADCAST*/, Msg: "hello there2"}
