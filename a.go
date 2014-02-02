@@ -244,9 +244,9 @@ return f
 }*/
 
 func main(){
-s:=New(1,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/cluster/d.json")
-s1:=New(2,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/cluster/d.json")
-s2:=New(3,"/home/vamsi/Desktop/go/src/github.com/vamsikrishnacs/cluster/d.json")
+s:=New(1,"./d.json")
+s1:=New(2,"./d.json")
+s2:=New(3,"./d.json")
 
 //-------------------------tests----------------
 
