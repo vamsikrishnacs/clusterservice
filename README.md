@@ -45,7 +45,7 @@ General description:
 1. Maintains a struct object for each server
 2. Uses Zeromq req/rep sockets for message passing
 3. Needs a supply of configuration of list of servers and address in json format
-
+4. An output file for the inbox of messages is created to store the messages to disk.
 
 System check:
 
