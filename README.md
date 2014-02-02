@@ -47,3 +47,12 @@ General description:
 3. Needs a supply of configuration of list of servers and address in json format
 
 
+System check:
+
+A count of no of meesages received can be seen in the log in the command line
+log pattern:
+msg request
+send
+got msg--(count of last msg)
+ack
+ok
