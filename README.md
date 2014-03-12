@@ -42,7 +42,7 @@ two functions
   
    wait for keystroke to start.
    // Let each server broadcast a message
-   {server.Outbox() <- &cluster.Envelope{Pid: cluster.BROADCAST, Msg: "hello there"} }
+   server.Outbox() <- &cluster.Envelope{Pid: cluster.BROADCAST, Msg: "hello there"} 
   
    select {
        case envelope := <- case server.Inbox(): 
