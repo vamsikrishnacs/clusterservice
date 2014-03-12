@@ -9,28 +9,40 @@ An api for managing servers in a cluster with point-point and broadcast messagin
 3. dynamic configuration of multiple servers using a json
 
 
+Usage:
+--------------------
+- go get github.com/vamsikrishnacs/clusterservice
+- go test
+
+Files included
+--------------------
+1. cluster.go(package)
+2. cluster_test.go
+3. config.json
+
 Testing:
 --------------------------------
-tested with many messages scenario
-tested with broadcasting(everyone to everyone else)
-tested with round-robin message passing
+- tested with many messages scenario 
+- tested with broadcasting(everyone to everyone else)
+- tested with round-robin message passing
 
 
 package usage:
 ----------------------------
 two functions
-New(id int,path //(.json config file) string )
-Envelope{pid int(-1 for broadcast),message}
+- New(id int,path //(.json config file) string )
+- Envelope{pid int(-1 for broadcast),message}
 
 
 
-//sample
- server := cluster.New(myid, /* config file */"config.json")
-   // the returned server object obeys the Server interface above.
+- //sample
+    {server := cluster.New(myid, /* config file */"config.json")}
+    
+- // the returned server object obeys the Server interface above.
   
    wait for keystroke to start.
    // Let each server broadcast a message
-   server.Outbox() <- &cluster.Envelope{Pid: cluster.BROADCAST, Msg: "hello there"}
+   {server.Outbox() <- &cluster.Envelope{Pid: cluster.BROADCAST, Msg: "hello there"} }
   
    select {
        case envelope := <- case server.Inbox(): 
