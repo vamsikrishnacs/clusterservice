@@ -4,23 +4,24 @@ clusterservice
 An api for managing servers in a cluster with point-point and broadcast messaging
 
 
-1.Implemented point-point messaging
-2.Broadcast messages
-3.dynamic configuration of multiple servers using a json
+1. Implemented point-point messaging
+2. Broadcast messages
+3. dynamic configuration of multiple servers using a json
 
 
 Testing:
-
+--------------------------------
 tested with many messages scenario
 tested with broadcasting(everyone to everyone else)
 tested with round-robin message passing
 
 
 package usage:
-
+----------------------------
 two functions
 New(id int,path //(.json config file) string )
 Envelope{pid int(-1 for broadcast),message}
+
 
 
 //sample
@@ -41,15 +42,15 @@ Envelope{pid int(-1 for broadcast),message}
 
 
 General description:
-
+-------------------------------------------------
 1. Maintains a struct object for each server
 2. Uses Zeromq req/rep sockets for message passing
 3. Needs a supply of configuration of list of servers and address in json format
 4. An output file for the inbox of messages is created to store the messages to disk.
 
 System check:
-
-A count of no of meesages received can be seen in the log in the command line
+-----------------------------
+No of messages sent must be equal to the no of messages received.
 log pattern:
 msg request
 send
