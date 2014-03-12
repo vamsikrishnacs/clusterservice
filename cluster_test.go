@@ -10,11 +10,11 @@ import (
 
 func Test(t *testing.T) {
 	c := 0
-	s := New(1, "./d1.json")
-	s1 := New(2, "./d1.json")
-	s2 := New(3, "./d1.json")
-	s3 := New(4, "./d1.json")
-	s4 := New(5, "./d1.json")
+	s := New(1, "./config.json")
+	s1 := New(2, "./config.json")
+	s2 := New(3, "./config.json")
+	s3 := New(4, "./config.json")
+	s4 := New(5, "./config.json")
 	//-------------------------tests----------------
 
 	//1.basic test send and receive
