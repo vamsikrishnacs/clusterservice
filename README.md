@@ -35,16 +35,21 @@ two functions
 
 
 
-- //sample
+//sample
     {server := cluster.New(myid, /* config file */"config.json")}
     
-- // the returned server object obeys the Server interface above.
+    
+// the returned server object obeys the Server interface above.
   
    wait for keystroke to start.
-   // Let each server broadcast a message
+
+
+// Let each server broadcast a message
+
+   
    server.Outbox() <- &cluster.Envelope{Pid: cluster.BROADCAST, Msg: "hello there"} 
   
-   select {
+select {
        case envelope := <- case server.Inbox(): 
            fmt.Printf("Received msg from %d: '%s'\n", envelope.Pid, envelope.Msg)
   
@@ -62,10 +67,11 @@ General description:
 
 System check:
 -----------------------------
-No of messages sent must be equal to the no of messages received.
-log pattern:
-msg request
-send
-got msg--(count of last msg)
-ack
-ok
+1. No of messages sent must be equal to the no of messages received.
+1. log pattern:
+
+- msg request
+- send
+- got msg--(count of last msg)
+- ack
+- ok
